@@ -1,0 +1,50 @@
+{
+    "DungeonHelp":[
+        "移動：↑↓→←",
+        "攻撃：space",
+        "インベントリ：E",
+        "選択・決定: Enter",
+        "キャンセル: E"
+    ],
+    "PotionHelp":[
+        "矢印ボタンを押下でスクロール",
+        "素材クリックで投入"
+    ],
+    "UpdateInfo":[
+        "バージョン:v0.3.0",
+        "1.立ち絵・瞬きモーションを実装",
+        "2.ポーション部屋を実装",
+        "3.SE・BGMを実装",
+        "4.音量調整機能を実装",
+        "5.セーブ・ロードを実装",
+        "6.歩行チップ更新",
+        "7.敵AIを実装",
+        "8.おしゃべりを実装",
+        "9.ポーション合成未実装",
+        "10.インベントリのページング未実装"
+    ],
+    "Credit": [
+        "- 製作者 -",
+        "・水キノコ",
+
+        "- 効果音・BGM -",
+        "・無料効果音で遊ぼう！[http://musmus.main.jp/info.html]",
+        "・MusMus [http://musmus.main.jp/info.html]",
+        "・くらげ工匠 [http://www.kurage-kosho.info/guide.html]",
+
+        "- 背景イラスト -",
+        "・ペタン 背景協力：ペタン　等 [http://hellohello.dousetsu.com/index.html]",
+
+        "- キャラクター -",
+        "・ここどこ [http://cocodoco.chu.jp/]",
+        "・水キノコ",
+
+        "- マップチップ -",
+        "・ドット絵世界 [http://yms.main.jp/]",
+        "・水キノコ",
+
+        "- ライブラリ -",
+        "・phina.js [https://phinajs.com/]",
+        "・Rot.js [https://ondras.github.io/rot.js/hp/]"
+    ]
+}

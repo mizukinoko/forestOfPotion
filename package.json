@@ -1,0 +1,17 @@
+{
+  "name": "beta",
+  "version": "0.5.0",
+  "description": "forest potion",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nw src/",
+    "build": "nwbuild -p win64 -o build/ src/"
+  },
+  "author": "mizukinoko",
+  "license": "ISC",
+  "dependencies": {
+    "nw": "^0.46.3",
+    "nw-builder": "^3.5.7"
+  }
+}

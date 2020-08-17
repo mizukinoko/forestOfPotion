@@ -1,0 +1,9 @@
+{
+  "name": "ポーションの森",
+  "version":"0.5.0",
+  "main": "app.js",
+  "window": {
+    "resizable": true,
+    "show_in_taskbar": false
+  }
+}
