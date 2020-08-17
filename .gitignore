@@ -1,3 +1,4 @@
 #除外
 node_modules/
 .DS_Store
+src/images/window/
