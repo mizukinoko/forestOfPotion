@@ -100,7 +100,7 @@ phina.define('Dungeon', {
             y1 = 3;
             y2 = 5;
         }
-        else if(this.floor <= 30)
+        else
         {
             x1 = 3;
             x2 = 6;
@@ -171,21 +171,41 @@ phina.define('Dungeon', {
 
                 if(this.dungeonObjectArray[x][y] === "tree") {
 
-                    if(this.floor <= 6) 
+                    if(this.floor <= 10) 
                     {
                         let block = Sprite("tree").addChildTo(this.dungeonLayer);
                         block.setPosition(x * baseSize, y * baseSize - baseSize / 2);
                         block.setSize(baseSize * 2, baseSize * 2);
                     }
-                    else if(this.floor <= 9)
+                    else if(this.floor <= 20)
                     {
                         let block = Sprite("tree4").addChildTo(this.dungeonLayer);
                         block.setPosition(x * baseSize, y * baseSize - baseSize / 2);
                         block.setSize(baseSize * 2, baseSize * 2);
                     }
-                    else if(this.floor <= 12)
+                    else if(this.floor <= 30)
                     {
                         let block = Sprite("kareki").addChildTo(this.dungeonLayer);
+                        block.setPosition(x * baseSize, y * baseSize - baseSize / 2);
+                        block.setSize(baseSize * 2, baseSize * 2);
+                    }
+                    else if(this.floor <= 40)
+                    {
+                        let treeName = "";
+                        let r = rand(0, 1);
+                        if(r == 0) treeName = "tree";
+                        if(r == 1) treeName = "tree4";
+                        let block = Sprite(treeName).addChildTo(this.dungeonLayer);
+                        block.setPosition(x * baseSize, y * baseSize - baseSize / 2);
+                        block.setSize(baseSize * 2, baseSize * 2);
+                    }
+                    else
+                    {
+                        let treeName = "";
+                        let r = rand(0, 1);
+                        if(r == 0) treeName = "kareki";
+                        if(r == 1) treeName = "tree4";
+                        let block = Sprite(treeName).addChildTo(this.dungeonLayer);
                         block.setPosition(x * baseSize, y * baseSize - baseSize / 2);
                         block.setSize(baseSize * 2, baseSize * 2);
                     }
