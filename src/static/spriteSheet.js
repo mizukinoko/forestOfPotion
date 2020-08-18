@@ -79,6 +79,10 @@ var ASSETS = {
       'ムラサキレンゲ': './images/ingredients/ムラサキレンゲ.png',
       'レンゲ': './images/ingredients/レンゲ.png',
       'ホウセンカ': './images/ingredients/ホウセンカ.png',
+      'ヒガンバナ': './images/ingredients/higanbana.png',
+      'タイツリソウ': './images/ingredients/taiturisou.png',
+      'リコリス': './images/ingredients/rikorisu.png',
+      'オオヒエンソウ': './images/ingredients/oohiensou.png',
 
       '黄色いグリモア': './images/ingredients/グリモア黄色.png',
 

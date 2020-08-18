@@ -16,6 +16,7 @@ phina.define("ItemClass", {
         //将来的にはこのリストをサーバーから受け取って生成するようにする
         this.itemList = 
         [
+            //0
             {
                 "name": "食用キノコ",
                 "hungry": 10, 
@@ -23,6 +24,7 @@ phina.define("ItemClass", {
                 "mp": 0,
                 "maxHP": 0
             },
+            //1
             {
                 "name": "桃色のキノコ",
                 "hungry": 10, 
@@ -30,6 +32,7 @@ phina.define("ItemClass", {
                 "mp": 0,
                 "maxHP": 0
             },
+            //2
             {
                 "name": "瑠璃色のキノコ",
                 "hungry": 10, 
@@ -37,6 +40,7 @@ phina.define("ItemClass", {
                 "mp": 10,
                 "maxHP": 0
             },
+            //3
             {
                 "name": "アジサイ",
                 "hungry": 5, 
@@ -44,6 +48,7 @@ phina.define("ItemClass", {
                 "mp": 10,
                 "maxHP": 0
             },
+            //4
             {
                 "name": "コーンフラワー",
                 "hungry":20, 
@@ -51,6 +56,7 @@ phina.define("ItemClass", {
                 "mp": 0,
                 "maxHP": 0
             },
+            //5
             {
                 "name": "ハタケシメジ",
                 "hungry": 10, 
@@ -58,6 +64,7 @@ phina.define("ItemClass", {
                 "mp": 0,
                 "maxHP": 0
             },
+            //6
             {
                 "name": "ミモザ",
                 "hungry": 5, 
@@ -65,6 +72,7 @@ phina.define("ItemClass", {
                 "mp": 5,
                 "maxHP": 0
             },
+            //7
             {
                 "name": "ムスカリ草",
                 "hungry": 10, 
@@ -72,6 +80,7 @@ phina.define("ItemClass", {
                 "mp": 0,
                 "maxHP": 0
             },
+            //8
             {
                 "name": "シロツメクサ",
                 "hungry": 20, 
@@ -79,13 +88,47 @@ phina.define("ItemClass", {
                 "mp": 0,
                 "maxHP": 0
             },
+            //9
+            {
+                "name": "ヒガンバナ",
+                "hungry": 5,
+                "hp": 0,
+                "mp": 0,
+                "maxHP": 0
+            },
+            //10
+            {
+                "name": "タイツリソウ",
+                "hungry": 5,
+                "hp": 0,
+                "mp": 0,
+                "maxHP": 0
+            },
+            //11
+            {
+                "name": "リコリス",
+                "hungry": 5,
+                "hp": 0,
+                "mp": 0,
+                "maxHP": 0
+            },
+            //12
+            {
+                "name": "オオヒエンソウ",
+                "hungry": 5,
+                "hp": 0,
+                "mp": 0,
+                "maxHP": 0
+            },
+
+            //13
             {
                 "name": "黄色いグリモア",
                 "hungry": 0,
                 "hp": 0,
                 "mp": 0,
                 "maxHP": rand(1, 2)
-            }
+            },
         ];
 
         // 親クラス初期化
@@ -105,9 +148,13 @@ phina.define("ItemClass", {
         {
             this.itemData = this.itemList[rand(7, 9)];
         }
+        else if(this.dungeonLevel <= 5)
+        {
+            this.itemData = this.itemList[rand(10, 12)];
+        }
         else
         {
-            this.itemData = this.itemList[rand(0, 9)];
+            this.itemData = this.itemList[rand(0, 13)];
         }
 
         this.superInit(this.itemData.name);
