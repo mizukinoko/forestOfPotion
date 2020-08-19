@@ -28,10 +28,6 @@ var ASSETS = {
 
       //Player
       'player': './images/player/whiteHair.png',
-
-      //'player': './images/player/パッツンちゃん歩行チップ.png',
-      'カエルちゃん': './images/player/カエルちゃんv3.png',
-      //'パッツンちゃん': './images/player/パッツンちゃん瞬きスプライトシート.png',
       'パッツンちゃん': './images/player/銀髪ちゃん/銀髪立ち絵スプライトシート.png',
 
       //キャラクター
