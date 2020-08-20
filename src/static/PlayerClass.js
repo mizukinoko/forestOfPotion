@@ -19,7 +19,7 @@ phina.define("PlayerClass", {
             'atk': 5,
             'kill': 0,
             'lv': 1,
-            'exp': 90,
+            'exp': 0,
         };
 
         //歩数
@@ -378,7 +378,34 @@ phina.define("PlayerClass", {
         this.messageWindow.setMessage(exp + "経験値を獲得した");
     },
 
+    /**
+     * レベルアップ管理
+     */
     checkLvUp: function() {
+
+        let tmp = ((this.status.lv ** 2) + (this.status.lv * 100));
+        let lvUp = this.status.exp - tmp;
+
+        console.log("tmp = " + tmp);
+        console.log("playerLV = " + this.status.lv);
+        if(lvUp > 0)
+        {
+            this.status.lv++;
+            this.messageWindow.setMessage(this.status.name + "のレベルがアップした");
+
+            let plusHP = rand(2, 4);
+            let plusMP = rand(3, 6);
+            let plusATK = rand(1, 2);
+
+            this.status.hp += plusHP
+            this.status.maxHP += plusHP;
+            this.status.mp += plusMP;
+            this.status.maxMP += plusMP;
+            this.status.atk += plusATK;
+            
+            return true;
+        }
+        /*
         if(this.status.exp >= 100 && this.status.lv === 1)
         {
             this.status.lv = 2;
@@ -396,5 +423,6 @@ phina.define("PlayerClass", {
             
             return true;
         }
+        */
     },
 });

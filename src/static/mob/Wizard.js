@@ -13,7 +13,7 @@ phina.define("Wizard", {
             'hp': 10,
             'mp': 50,
             'atk': 1,
-            'exp': 5,
+            'exp': 15,
         };
     },
 
