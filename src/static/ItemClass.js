@@ -92,7 +92,7 @@ phina.define("ItemClass", {
             {
                 "name": "ヒガンバナ",
                 "hungry": 5,
-                "hp": 0,
+                "hp": -5,
                 "mp": 0,
                 "maxHP": 0
             },
