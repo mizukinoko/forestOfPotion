@@ -133,17 +133,17 @@ phina.define("PlayerClass", {
         this.messageWindow.setMessage(this.status.name + 'は' + hpDamage + 'ダメージ!');
 
         //ダメージアニメーション
-        /*
+        
         let damageLabel = Label(hpDamage).addChildTo(this.dungeonLayer).setPosition(this.x, this.y);
         damageLabel.stroke = "black";
         damageLabel.fill = "white";
         damageLabel.tweener
-        .moveBy({x: 0, y: -baseSize}, 300)
+        .moveTo({x: this.x, y: this.y - baseSize}, 500)
         .call(function(){
             damageLabel.remove();
         })
         .play();
-        */
+        
     },
 
     playAttackEfe: function(x, y){
