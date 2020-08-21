@@ -28,7 +28,7 @@
 この作品の制作には、下記のライブラリ及び素材を使用させていただきました。
 
 - 効果音・BGM -
-・無料効果音で遊ぼう！　小森 平 [http://musmus.main.jp/info.html]
+・無料効果音で遊ぼう！　小森 平 [https://taira-komori.jpn.org/]
 ・MusMus [http://musmus.main.jp/info.html]
 ・くらげ工匠 [http://www.kurage-kosho.info/guide.html]
 
