@@ -72,32 +72,8 @@ phina.define('GameScene', {
     }
     
     //Mob生成
-    this.mobNameList = ['おばけカボチャ', 'ガル', '触手の化け物', 'うさぎ', '魔法使い'];
     this.mobs = new Array(0);
-    for(var i = 0; i < 3; i++){
-
-      let r = rand(0, 2);
-      
-      if(this.floor <= 3) {
-        if(r == 0) this.mobs.push(ObakeKabotya(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-        if(r == 1) this.mobs.push(Garu(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-        if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-      }
-      else if(this.floor <= 6)
-      {
-        if(r == 0) this.mobs.push(Garu(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-        if(r == 1) this.mobs.push(Usagi(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-        if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-      }
-      else if(this.floor <= 9)
-      {
-        if(r == 0) this.mobs.push(Usagi(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-        if(r == 1) this.mobs.push(Wizard(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-        if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-      }else {
-        this.mobs.push(Wizard(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-      }
-    }
+    this.genMobs(3);
     
     //アイテムウィンドウ生成
     this.itemWindow = ItemWindow(this.player.possession, this.player.absoluteX, this.player.absoluteY, this.messageWindow).addChildTo(this);
@@ -268,7 +244,7 @@ phina.define('GameScene', {
 
     //mobが一体もいない場合
     if(this.mobs.length <= 0){
-      this.mobs.push(Mob(this.mobNameList[rand(0, 1)], this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+      this.genMobs(3);
     }
 
     //ターン制御
@@ -320,6 +296,34 @@ phina.define('GameScene', {
     if(typeof data.floor !== "undefined"){
       this.floor = data.floor + 1;
       this.floorLabel.text = this.floor + 'F ';
+    }
+  },
+
+  genMobs: function(num){
+    this.mobNameList = ['おばけカボチャ', 'ガル', '触手の化け物', 'うさぎ', '魔法使い'];
+    for(var i = 0; i < num; i++){
+
+      let r = rand(0, 2);
+      
+      if(this.floor <= 3) {
+        if(r == 0) this.mobs.push(ObakeKabotya(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 1) this.mobs.push(Garu(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+      }
+      else if(this.floor <= 6)
+      {
+        if(r == 0) this.mobs.push(Garu(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 1) this.mobs.push(Usagi(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+      }
+      else if(this.floor <= 9)
+      {
+        if(r == 0) this.mobs.push(Usagi(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 1) this.mobs.push(Wizard(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+      }else {
+        this.mobs.push(Wizard(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+      }
     }
   },
 
