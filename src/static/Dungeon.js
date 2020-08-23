@@ -15,14 +15,14 @@ phina.define('Dungeon', {
             colsDungeonBlock = MAP_W / baseSize;
             rowsDungeonBlock = MAP_H / baseSize;
         }
-        else if(this.floor <= 20)
+        else if(this.floor <= 15)
         {
             MAP_W = baseSize * 25;
             MAP_H = baseSize * 25;
             colsDungeonBlock = MAP_W / baseSize;
             rowsDungeonBlock = MAP_H / baseSize;
         }
-        else if(this.floor <= 30)
+        else if(this.floor <= 20)
         {
             MAP_W = baseSize * 30;
             MAP_H = baseSize * 30;

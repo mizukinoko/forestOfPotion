@@ -10,10 +10,10 @@ phina.define('GameScene', {
     this.dungeonLevel = 1;
 
     //最大深層
-    this.maxFloor = 50;
+    this.maxFloor = 30;
 
     //階層
-    this.floor = 30;
+    this.floor = 20;
 
     //レイヤーを定義する
     this.groundLayer = DisplayElement().addChildTo(this);
