@@ -208,6 +208,21 @@ phina.define('ItemListWindow', {
             {
                 "name": "ムスカリ草"
             },
+            {
+                "name": "シロツメクサ"
+            },
+            {
+                "name": "ヒガンバナ"
+            },
+            {
+                "name": "タイツリソウ"
+            },
+            {
+                "name": "リコリス"
+            },
+            {
+                "name": "オオヒエンソウ"
+            },
         ];
         this.superInit();
         this.warehouse = warehouse
