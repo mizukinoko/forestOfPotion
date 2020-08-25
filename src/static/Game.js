@@ -322,7 +322,7 @@ phina.define('GameScene', {
         if(r == 1) this.mobs.push(Wizard(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
         if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
       }else {
-        this.mobs.push(Wizard(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        this.mobs.push(KinokoWitch(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
       }
     }
   },

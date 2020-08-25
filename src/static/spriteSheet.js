@@ -39,6 +39,7 @@ var ASSETS = {
       '触手の化け物': './images/mob/azathoth.png',
       'うさぎ': './images/mob/rabbit.png',
       '魔法使い': './images/mob/wizard.png',
+      'キノコの魔女': './images/mob/kinokoWizard.png',
 
       //Dungeon Item
       'jimen': './images/jimen.png',
@@ -333,6 +334,39 @@ var ASSETS = {
 
       //魔法使い
       "魔法使いSS":{
+        "frame": {
+          "width": 48,
+          "height": 48,
+          "cols": 3,
+          "rows": 4,
+        },
+        //animation
+        "animations": {
+          "walkDown": {
+            "frames": [0, 1, 2],
+            "next": "walkDown",
+            "frequency": frequency,
+          },
+          "walkUp": {
+            "frames": [9, 10, 11],
+            "next": "walkUp",
+            "frequency": frequency,
+          },
+          "walkLeft": {
+            "frames": [3, 4, 5],
+            "next": "walkLeft",
+            "frequency": frequency,
+          },
+          "walkRight": {
+            "frames": [6, 7, 8],
+            "next": "walkRight",
+            "frequency": frequency,
+          },
+        }
+      },
+
+      //魔法使い
+      "キノコの魔女SS":{
         "frame": {
           "width": 48,
           "height": 48,
