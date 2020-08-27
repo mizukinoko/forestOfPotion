@@ -84,9 +84,12 @@ var ASSETS = {
       '黄色いグリモア': './images/ingredients/グリモア黄色.png',
 
       //ポーション
-      'MPポーション(初級)': './images/potion/potion1.png',
-      'HPポーション(初級)': './images/potion/potion2.png',
-      'SPポーション(初級)': './images/potion/potion3.png',
+      'MPポーション(Lv1)': './images/potion/BluePotion_lv1.png',
+      'HPポーション(Lv1)': './images/potion/RedPotion_lv1.png',
+      'SPポーション(Lv1)': './images/potion/OrangePotion_lv1.png',
+      'MPポーション(Lv2)': './images/potion/BluePotion_lv1.png',
+      'HPポーション(Lv2)': './images/potion/RedPotion_lv1.png',
+      'SPポーション(Lv2)': './images/potion/OrangePotion_lv1.png',
     },
     font: {
       'pixel': './font/PixelMplus10-Regular.ttf'

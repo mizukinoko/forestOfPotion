@@ -14,17 +14,20 @@ phina.define("WaterKettle", {
         this.potionName = this.makePotion();
     },
     makePotion: function(){
-        if(this.entryItems[0].name === "桃色のキノコ"){
-            return "HPポーション(初級)";
-        }
-        if(this.entryItems[0].name === "瑠璃色のキノコ"){
-            return "MPポーション(初級)";
-        }
-        if(this.entryItems[0].name === "食用キノコ"){
-            return "SPポーション(初級)";
-        }
+        /**
+         * LV1
+         */
+        if(this.entryItems[0].name === "桃色のキノコ") return "HPポーション(Lv1)";
+        if(this.entryItems[0].name === "瑠璃色のキノコ") return "MPポーション(Lv1)";
+        if(this.entryItems[0].name === "食用キノコ") return "SPポーション(Lv1)";
+        /**
+         * LV2
+         */
+        if(this.entryItems[0].name === "コーンフラワー") return "HPポーション(Lv2)";
+        if(this.entryItems[0].name === "アジサイ") return "MPポーション(Lv2)";
+        if(this.entryItems[0].name === "ハタケシメジ") return "SPポーション(Lv2)";
 
         //どれにも当てはまらない場合
-        return "MPポーション(初級)";
+        return "MPポーション(Lv1)";
     }
 });

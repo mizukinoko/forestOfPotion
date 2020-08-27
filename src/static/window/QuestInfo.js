@@ -44,9 +44,9 @@ phina.define('QuestInfo', {
 
         //クエスト定義
         this.quests = [
-            "HPポーション(初級)",
-            "MPポーション(初級)",
-            "SPポーション(初級)"
+            "HPポーション(Lv1)",
+            "MPポーション(Lv1)",
+            "SPポーション(Lv1)"
         ];
     },
 

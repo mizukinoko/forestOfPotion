@@ -395,11 +395,31 @@ phina.define('ItemListWindow', {
                 this.itemSpriteArray[i].onpointend = function(){
                     console.log(this.name + 'がクリックされたよ');
 
+                    //倉庫の在庫を減らす
+                    for(var j = 0; j < self.warehouse.list.length; j++){
+                        if(self.warehouse.list[j].name === this.name){
+                            //アイテムを窯に投入する
+                            self.waterKettle.setItem(self.warehouse.list[j]);
+                            console.log('水窯に入っているアイテム');
+                            console.log(self.waterKettle.entryItems);
+                            //倉庫からアイテムを削除する
+                            self.warehouse.list.splice(j, 1);
+                            //ポーションの画像を表示する
+                            console.log('potionName = ' + self.waterKettle.potionName);
+                            self.potionImage = Sprite(self.waterKettle.potionName)
+                            .setPosition(self.potionFrame.x, self.potionFrame.y)
+                            .setSize(baseSize * 1.5, baseSize * 1.5)
+                            .addChildTo(self);
+                            break;
+                        }
+                    }
+
                     //水窯にすでにアイテムが入っていないか確認する
                     if(self.waterKettle.entryItems.length > 0) {
                         console.log("すでにポーションができてます。\nこれ以上の投入は不可能です");
                         return 0;
                     }
+                    /*
                     //倉庫の在庫を減らす
                     for(var j = 0; j < self.warehouse.list.length; j++){
                         if(self.warehouse.list[j].name === this.name){
@@ -408,6 +428,7 @@ phina.define('ItemListWindow', {
                             break;
                         }
                     }
+                    */
                     //素材数をカウントしなおす
                     self.reCount();
                     //素材投入アニメーション
