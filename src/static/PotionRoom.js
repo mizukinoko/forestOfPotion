@@ -286,6 +286,13 @@ phina.define('ItemListWindow', {
             this.itemSpriteArray[i].setInteractive(true);
             this.itemSpriteArray[i].onpointend = function(){
                 console.log(this.name + 'がクリックされたよ');
+
+                //水窯にすでにアイテムが入っていないか確認する
+                if(self.waterKettle.entryItems.length > 0) {
+                    console.log("すでにポーションができてます。\nこれ以上の投入は不可能です");
+                    return 0;
+                }
+                
                 //倉庫の在庫を減らす
                 for(var j = 0; j < self.warehouse.list.length; j++){
                     if(self.warehouse.list[j].name === this.name){
@@ -394,6 +401,12 @@ phina.define('ItemListWindow', {
                 this.itemSpriteArray[i].setInteractive(true);
                 this.itemSpriteArray[i].onpointend = function(){
                     console.log(this.name + 'がクリックされたよ');
+
+                    //水窯にすでにアイテムが入っていないか確認する
+                    if(self.waterKettle.entryItems.length > 0) {
+                        console.log("すでにポーションができてます。\nこれ以上の投入は不可能です");
+                        return 0;
+                    }
 
                     //倉庫の在庫を減らす
                     for(var j = 0; j < self.warehouse.list.length; j++){
