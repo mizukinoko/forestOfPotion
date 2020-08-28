@@ -414,11 +414,14 @@ phina.define('ItemListWindow', {
                         }
                     }
 
+                    /*
                     //水窯にすでにアイテムが入っていないか確認する
                     if(self.waterKettle.entryItems.length > 0) {
                         console.log("すでにポーションができてます。\nこれ以上の投入は不可能です");
                         return 0;
                     }
+                    */
+
                     /*
                     //倉庫の在庫を減らす
                     for(var j = 0; j < self.warehouse.list.length; j++){
@@ -438,6 +441,8 @@ phina.define('ItemListWindow', {
                     .addChildTo(self);
                     icon.tweener.moveTo(baseSize * 4.5, baseSize * 5.5, 500)
                     .call(function(){
+                        //素材投入アニメ削除
+                        console.log("素材投入アニメ削除");
                         //削除する
                         icon.remove();
                     })
