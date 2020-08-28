@@ -87,9 +87,9 @@ var ASSETS = {
       'MPポーション(Lv1)': './images/potion/BluePotion_lv1.png',
       'HPポーション(Lv1)': './images/potion/RedPotion_lv1.png',
       'SPポーション(Lv1)': './images/potion/OrangePotion_lv1.png',
-      'MPポーション(Lv2)': './images/potion/BluePotion_lv1.png',
-      'HPポーション(Lv2)': './images/potion/RedPotion_lv1.png',
-      'SPポーション(Lv2)': './images/potion/OrangePotion_lv1.png',
+      'MPポーション(Lv2)': './images/potion/BluePotion_lv2.png',
+      'HPポーション(Lv2)': './images/potion/RedPotion_lv2.png',
+      'SPポーション(Lv2)': './images/potion/OrangePotion_lv2.png',
     },
     font: {
       'pixel': './font/PixelMplus10-Regular.ttf'
