@@ -292,7 +292,6 @@ phina.define('ItemListWindow', {
                     console.log("すでにポーションができてます。\nこれ以上の投入は不可能です");
                     return 0;
                 }
-                おお
                 //倉庫の在庫を減らす
                 for(var j = 0; j < self.warehouse.list.length; j++){
                     if(self.warehouse.list[j].name === this.name){
