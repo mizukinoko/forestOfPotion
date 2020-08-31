@@ -50,12 +50,13 @@ phina.define('PotionRoomScene', {
         this.debt = loadData.debt;
         this.debtLabel = Label({
             text: "ローン : $" + this.debt,
+            fontSize: baseSize / 2,
             fontFamily: "pixel",
             fill: "white",
             stroke: "black",
         }).addChildTo(this);
         
-        this.debtLabel.setPosition(this.gridX.span(3), HEIGHT - baseSize);
+        this.debtLabel.setPosition(this.gridX.span(4), baseSize / 2);
 
         //依頼
         this.questInfo = QuestInfo().addChildTo(this);
@@ -226,12 +227,14 @@ phina.define('ItemListWindow', {
         ];
         this.superInit();
         this.warehouse = warehouse
+
         //選択中ラベル
         this.nowSelectLabel = 1;
+
         //カーソルが乗っているアイテム名を表示するラベル
         this.itemNameLabel = Label({
             x: WIDTH / 2,             // x座標
-            y: baseSize / 2,             // y座標
+            y: baseSize * 3,             // y座標
             text: "",     // 表示文字
             fontSize: baseSize / 2,       // 文字サイズ
             fill: 'white', // 文字色
@@ -262,10 +265,14 @@ phina.define('ItemListWindow', {
         var self = this;
         //素材画像
         this.itemSpriteArray = new Array(3);
+
+        //素材画像の基準値
+        let itemSpriteBaseX = baseSize * 0.75;
+        let itemSpriteBaseY = baseSize * 1.5;
         for(var i = 0; i < 3; i++){
             this.itemSpriteArray[i] = Icon(this.itemList[i].name, i).addChildTo(this);
-            this.itemSpriteArray[i].x = baseSize * 0.75;
-            this.itemSpriteArray[i].y = baseSize + i * baseSize * 1.25 + baseSize * 1.25;
+            this.itemSpriteArray[i].x = itemSpriteBaseX;
+            this.itemSpriteArray[i].y = itemSpriteBaseY + i * baseSize * 1.25 + baseSize * 1.25;
             this.itemSpriteArray[i].setSize(baseSize, baseSize);
         }
         //アイテム数ラベル
@@ -335,7 +342,7 @@ phina.define('ItemListWindow', {
         }
         //矢印ボタン
         this.upArrow = Sprite('upArrow').addChildTo(this);
-        this.upArrow.setPosition(baseSize * 0.75, baseSize);
+        this.upArrow.setPosition(baseSize * 0.75, baseSize * 1.5);
         this.upArrow.setSize(baseSize, baseSize);
         this.upArrow.setInteractive(true);
         this.upArrow.onclick = function(){
@@ -344,7 +351,7 @@ phina.define('ItemListWindow', {
         }
 
         this.downArrow = Sprite('downArrow').addChildTo(this);
-        this.downArrow.setPosition(baseSize * 0.75, baseSize * 6);
+        this.downArrow.setPosition(baseSize * 0.75, baseSize * 6.5);
         this.downArrow.setSize(baseSize, baseSize);
         this.downArrow.setInteractive(true);
         this.downArrow.onclick = function(){
@@ -391,11 +398,16 @@ phina.define('ItemListWindow', {
         if(this.checkItemNumber(upDown)){
             //一回全部クリアにする
             this.iconClear();
+
+            //素材画像の基準値
+            let itemSpriteBaseX = baseSize * 0.75;
+            let itemSpriteBaseY = baseSize * 1.5;
+            
             for(var i = 0; i < 3; i++){
                 var itemNumber = this.itemSpriteArray[i].itemNumber + upDown;
                 this.itemSpriteArray[i] = Icon(this.itemList[itemNumber].name, itemNumber).addChildTo(this);
-                this.itemSpriteArray[i].x = baseSize * 0.75;
-                this.itemSpriteArray[i].y = baseSize + i * baseSize * 1.25 + baseSize * 1.25;
+                this.itemSpriteArray[i].x = itemSpriteBaseX;
+                this.itemSpriteArray[i].y = itemSpriteBaseY + i * baseSize * 1.25 + baseSize * 1.25;
                 this.itemSpriteArray[i].setSize(baseSize, baseSize);
                 this.itemSpriteArray[i].setInteractive(true);
                 this.itemSpriteArray[i].onpointend = function(){
