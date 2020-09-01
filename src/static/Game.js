@@ -13,7 +13,7 @@ phina.define('GameScene', {
     this.maxFloor = 30;
 
     //階層
-    this.floor = 29;
+    this.floor = 10;
 
     //レイヤーを定義する
     this.groundLayer = DisplayElement().addChildTo(this);
@@ -312,16 +312,22 @@ phina.define('GameScene', {
       }
       else if(this.floor <= 6)
       {
-        if(r == 0) this.mobs.push(Garu(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 0) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
         if(r == 1) this.mobs.push(Usagi(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-        if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 2) this.mobs.push(Wizard(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
       }
       else if(this.floor <= 9)
       {
         if(r == 0) this.mobs.push(Usagi(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
         if(r == 1) this.mobs.push(Wizard(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-        if(r == 2) this.mobs.push(SyokusyuNoBakemono(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
-      }else {
+        if(r == 2) this.mobs.push(KinokoWitch(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+      }
+      else if(this.floor <= 12)
+      {
+        if(r == 0) this.mobs.push(KinokoWitch(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 1) this.mobs.push(KinokoGirl(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+        if(r == 2) this.mobs.push(Pierrot(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
+      } else {
         this.mobs.push(KinokoWitch(this.dungeon.dungeonArray, this.dungeonLayer, this.player, this.messageWindow).addChildTo(this.mobLayer));
       }
     }
