@@ -146,11 +146,15 @@ phina.define('GameScene', {
       if(mob.status.hp <= 0){
 
         //アイテムをドロップさせる
-        this.dungeonItems.push(ItemClass(this.groundLayer, this.dungeonLevel, this.dungeon).addChildTo(this.mobLayer));
-        this.dungeonItems[this.dungeonItems.length - 1].x = mob.x;
-        this.dungeonItems[this.dungeonItems.length - 1].y = mob.y;
-        this.dungeonItems[this.dungeonItems.length - 1].absoluteX = mob.absoluteX;
-        this.dungeonItems[this.dungeonItems.length - 1].absoluteY = mob.absoluteY;
+        //確率はテストして微調整すること
+        if(rand(0, 10) == 0)
+        {
+          this.dungeonItems.push(ItemClass(this.groundLayer, this.dungeonLevel, this.dungeon).addChildTo(this.mobLayer));
+          this.dungeonItems[this.dungeonItems.length - 1].x = mob.x;
+          this.dungeonItems[this.dungeonItems.length - 1].y = mob.y;
+          this.dungeonItems[this.dungeonItems.length - 1].absoluteX = mob.absoluteX;
+          this.dungeonItems[this.dungeonItems.length - 1].absoluteY = mob.absoluteY;
+        }
 
         //プレイヤーに経験値を入れる
         this.player.getExp(mob.status.exp);
