@@ -13,7 +13,7 @@ phina.define('GameScene', {
     this.maxFloor = 30;
 
     //階層
-    this.floor = 10;
+    this.floor = 29;
 
     //レイヤーを定義する
     this.groundLayer = DisplayElement().addChildTo(this);

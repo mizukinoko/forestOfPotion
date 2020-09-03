@@ -11,6 +11,7 @@ DataManager.DataSave = {
 
         //セーブする
         data.list.forEach(item => {
+            console.log(item);
             console.log(item.itemData.name);
             //保存
             saveData.warehouse.push(item.itemData);
@@ -94,6 +95,45 @@ DataManager.DataSave = {
         } catch(e) {
 
             console.log('設定を保存できませんでした');
+            console.log(e);
+
+        }
+    },
+
+    SavePotionRoom: function(warehouse, debt) {
+        //セーブデータをロードする
+        let saveData = load('SaveData.json');
+
+        //セーブする
+        saveData.warehouse = warehouse.list;
+        console.log(saveData.warehouse);
+        /*倉庫内増殖バグの原因
+        warehouse.list.forEach(item => {
+            console.log(item);
+            console.log(item.name);
+            //保存
+            saveData.warehouse.push(item);
+        });
+        */
+
+        //借金をセーブする
+        saveData.debt = debt;
+
+        //セーブデータを書き出す
+        try {
+            
+            var path = require("path");
+
+            var path = path.dirname(process.execPath);
+            console.log("セーブ先：" + path);
+
+            //セーブ
+            fs.writeFileSync(path + "\\" + "SaveData.json", JSON.stringify(saveData, null, 4));
+            console.log("セーブできました");
+
+        } catch(e) {
+
+            console.log("セーブできませんでした");
             console.log(e);
 
         }

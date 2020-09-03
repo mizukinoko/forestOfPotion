@@ -7,13 +7,14 @@ phina.define('TitleScene', {
     this.superInit(option);
 
     //セーブデータをロード
+    //DataManager.DataSave.MakeSaveFile();
     if(load('SaveData.json') === -1){
       DataManager.DataSave.MakeSaveFile();
     }
 
     //音量初期化
-    SoundManager.setVolumeMusic(0.01);
-    SoundManager.setVolume(0.01);
+    SoundManager.setVolumeMusic(0.1);
+    SoundManager.setVolume(0.1);
 
     // 背景追加
     var titleGif = Sprite('title').addChildTo(this);

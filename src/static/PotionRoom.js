@@ -150,6 +150,9 @@ phina.define('PotionRoomScene', {
 
             //クエストを新しく生成する
             this.questInfo.setQuest();
+
+            //セーブ
+            DataManager.DataSave.SavePotionRoom(this.warehouse, this.debt);
         }
         
         //リビングへ
@@ -437,25 +440,6 @@ phina.define('ItemListWindow', {
                             break;
                         }
                     }
-
-                    /*
-                    //水窯にすでにアイテムが入っていないか確認する
-                    if(self.waterKettle.entryItems.length > 0) {
-                        console.log("すでにポーションができてます。\nこれ以上の投入は不可能です");
-                        return 0;
-                    }
-                    */
-
-                    /*
-                    //倉庫の在庫を減らす
-                    for(var j = 0; j < self.warehouse.list.length; j++){
-                        if(self.warehouse.list[j].name === this.name){
-                            self.waterKettle.setItem(self.warehouse.list[j]);
-                            self.warehouse.list.splice(j, 1);
-                            break;
-                        }
-                    }
-                    */
                     //素材数をカウントしなおす
                     self.reCount();
                     //素材投入アニメーション
@@ -500,103 +484,4 @@ phina.define("Icon", {
         this.itemNumber = itemNumber;
     }
 });
-/*
-phina.define('ItemListWindow1', {
-    superClass: 'DisplayElement',
-    init: function (warehouse) {
-        this.superInit();
-        this.backgroundColor = "#000";
-        this.warehouse = warehouse;
-        //将来的にはこのリストをサーバーから受け取って生成するようにする
-        this.itemList = 
-        [
-            {
-                "name": "アジサイ",
-            },
-            {
-                "name": "コーンフラワー",
-            },
-            {
-                "name": "ハタケシメジ",
-            },
-            {
-                "name": "ミモザ",
-            },
-            {
-                "name": "ムスカリ草",
-            },
-            {
-                "name": "食用キノコ",
-            },
-            {
-                "name": "桃色のキノコ",
-            },
-            {
-                "name": "瑠璃色のキノコ",
-            },
-        ];
-        //選択中ラベル
-        this.nowSelectLabel = 1;
-        //何ページ目か
-        this.page = 1;
-        //アイテム画像
-        this.makeSprite();
-        //icon作成
-        this.makeIcon();
-        //ラベル更新
-        this.review();
-        //消す
-        this.hide();
-    },
-    makeIcon: function(){
-        //iconのポジション
-        this.iconPosition = [
-            {x: baseSize * 1.5, y: baseSize * 1.5},
-            {x: baseSize * 3.5, y: baseSize * 1.5},
-            {x: baseSize * 5.5, y: baseSize * 1.5},
-            {x: baseSize * 7.5, y: baseSize * 1.5},
-            {x: baseSize * 1.5, y: baseSize * 6},
-            {x: baseSize * 3.5, y: baseSize * 6},
-            {x: baseSize * 5.5, y: baseSize * 6},
-            {x: baseSize * 7.5, y: baseSize * 6},
-        ];
-        //iconを作る
-        this.icons = Array(this.itemList.length);
-        //瓶を作る
-        this.bottles = Array(this.itemList.length);
-        for(var i = 0; i < this.itemList.length; i++){
-            //icon
-            this.icons[i] = Sprite(this.itemList[i].name).addChildTo(this);
-            this.icons[i].setSize(baseSize * 0.75, baseSize * 0.75);
-            this.icons[i].setPosition(this.iconPosition[i].x, this.iconPosition[i].y);
-            //瓶
-            this.bottles[i] = Sprite('bottle').addChildTo(this);
-            this.bottles[i].setSize(baseSize * 1, baseSize * 2);
-            this.bottles[i].setPosition(this.iconPosition[i].x, this.iconPosition[i].y);
-        }
-    },
-    makeSprite: function(){
-    },
-    review: function(){
-        
-    },
-    update: function(app){
-    }
-});
-
-function counter(list, name){
-    var count = 0;
-    for(var i = 0; i < list.length; i++){
-        if(list[i].itemData.name === "name"){
-            count++;
-        }
-    }
-    if(count > 0){
-        return count;
-    }else{
-        console.log('そのアイテムはありませんでした');
-        return -1;
-    }
-}
-*/
 
