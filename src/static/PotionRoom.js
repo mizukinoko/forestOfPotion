@@ -138,6 +138,13 @@ phina.define('PotionRoomScene', {
         //売却ボタンを押したとき
         this.saleButton.onpointend = () => {
 
+            //水釜に何も入っていない時は売却できない
+            if(typeof(this.waterKettle.entryItems[0]) == "undefined")
+            {
+                console.log("ポーションが無いため売却できません");
+                return -1;
+            }
+
             //お金を入れる
             this.debt -= this.questInfo.reward;
             this.debtLabel.text = "ローン : $" + this.debt;
