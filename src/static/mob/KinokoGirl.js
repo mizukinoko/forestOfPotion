@@ -38,6 +38,13 @@ phina.define("KinokoGirl", {
         console.log('Player絶対位置：x : ' + absolutePlayerX + ' y : ' + absolutePlayerY);
         console.log('mob絶対位置：x : ' + this.x + ' y : ' + this.y);
         var self = this;
+
+        //プレイヤーを発見できているかチェック
+        if(!this.checkFoundPlayer(absolutePlayerX, absolutePlayerY)){
+            //プレイヤーを見つけてないので、何もしない
+            return "unfound";
+        }
+        
         //入力コールバック
         var passableCallback = function(x, y){
             return (self.mapArray[x][y] === 0);

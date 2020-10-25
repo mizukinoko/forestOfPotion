@@ -49,6 +49,9 @@ phina.define("Engine", {
   nextTurn: function(key, mobs, player, mapGroup){
     //mobsが移動中は実行しない
     if(mobs[0].tweener.playing) return -1;
+    //playerが移動中は実行しない
+    if(player.tweener.playing) return -1;
+    if(mapGroup.tweener.playing) return -1;
     //if (player.tweener.playing || mapGroup.tweener.playing) return -1;
     var self = this;
     /**

@@ -13,7 +13,7 @@ phina.define('GameScene', {
     this.maxFloor = 30;
 
     //階層
-    this.floor = 29;
+    this.floor = 12;
 
     //レイヤーを定義する
     this.groundLayer = DisplayElement().addChildTo(this);
@@ -264,7 +264,7 @@ phina.define('GameScene', {
       v = 260;
     }
 
-    result = GameEngine.nextTurn(key, this.mobs, this.player, this.mapGroup);
+    result = GameEngine.nextTurn(key, this.mobs, this.player, this.dungeonLayer);
   
     //Mapping開始
     this.mapping.review(this.player.absoluteX, this.player.absoluteY);

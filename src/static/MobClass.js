@@ -68,6 +68,25 @@ phina.define("Mob", {
             }
         }
     },
+    
+    checkFoundPlayer: function(absolutePlayerX,absolutePlayerY) {
+        let x1 = this.x - (baseSize * 3);
+        let y1 = this.y - (baseSize * 3);
+        let x2 = this.x + (baseSize * 3);
+        let y2 = this.y + (baseSize * 3);
+        
+        let flagX = false;
+        let flagY = false;
+
+        if(x1 <= absolutePlayerX && absolutePlayerX <= x2) flagX = true;
+        if(y1 <= absolutePlayerY && absolutePlayerY <= y2) flagY = true;
+
+        if(flagX && flagY){
+            return true;
+        }else{
+            return false;
+        }
+    },
 
     attacked: function(hpDamage, mpDamage){
         this.status.hp -= hpDamage;
