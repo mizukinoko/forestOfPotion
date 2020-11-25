@@ -41,7 +41,7 @@ phina.define('GameScene', {
       x: baseSize / 3,
       y:baseSize / 16,
       fill: "white",
-      fontSize: baseSize / 2,
+      fontSize: 35,
       fontFamily: "pixel",
       stroke: 'black',
       strokeWidth: 2,
@@ -90,11 +90,11 @@ phina.define('GameScene', {
     //操作情報表示ウィンドウ用ボタン
     this.infoWindowButton = Button({
         x: WIDTH - baseSize,             // x座標
-        y: baseSize / 2,             // y座標
-        width: baseSize * 1.5,         // 横サイズ
+        y: baseSize / 3,             // y座標
+        width: baseSize,         // 横サイズ
         height: baseSize / 2,        // 縦サイズ
         text: "操作",     // 表示文字
-        fontSize: baseSize / 3,       // 文字サイズ
+        fontSize: 35,       // 文字サイズ
         fontColor: 'white', // 文字色
         cornerRadius: 10,   // 角丸み
         stroke: 'gray',     // 枠色
