@@ -1,3 +1,4 @@
+
 // MainScene クラスを定義
 phina.define('GameScene', {
   superClass: 'DisplayScene',
@@ -201,6 +202,21 @@ phina.define('GameScene', {
       if(this.isHitTrap(trap)) {
 
         trap.show();
+        //爆発エフェクト再生
+        let bomb = Sprite('bombEffect', 48, 48).addChildTo(this.dungeonLayer);
+        bomb.scaleX = 2;
+        bomb.scaleY = 2;
+        bomb.setPosition(trap.x, trap.y);
+
+        let bombAnim = FrameAnimation('bombSS').attachTo(bomb);
+        console.log(bombAnim);
+        //bombAnim.setNext("bomber", "bomber");
+        bombAnim.gotoAndPlay("bomber");
+
+        bomb.tweener.wait(1000).call(function() {
+          bomb.remove();
+        });
+
         console.log('トラップに掛かりました！');
 
         //メッセージ表示

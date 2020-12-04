@@ -1,4 +1,7 @@
 var ASSETS = {
+    aseprite: {
+      'bombSS': "images/effect/bomb.json",
+    },
     image: {
       //title
       'title': './images/title.gif',
@@ -63,6 +66,7 @@ var ASSETS = {
       //トラップ
       'alphaTrap': './images/trap/alphaTrap.png',
       '地雷': './images/trap/地雷.png',
+      'bombEffect': './images/effect/bomb.png',
 
       //item
       'アジサイ': './images/ingredients/アジサイ.png',

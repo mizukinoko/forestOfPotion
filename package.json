@@ -10,7 +10,9 @@
   },
   "author": "mizukinoko",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "phina-aseprite-loader": "^0.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mizukinoko/forestOfPotion.git"
